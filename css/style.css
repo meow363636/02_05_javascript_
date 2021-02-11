@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+#wrapper {width:100%;background:url(../img/restaurant-img7.jpg);}
+#wrapper #header {z-index:3;position:relative;width:100%;height:75px;background:#ddd;}
+#wrapper #header .wrap {width:1200px;height:75px;margin:0 auto;background:#cec;}
+#wrapper #header .wrap .content {width:100%;height:100%;background:#cce;}
+#wrapper #header .wrap .content .left-box {float:left;width:200px;height:100%;background:#000;}
+#wrapper #header .wrap .content .left-box img {float:left;width:180px;height:40px;margin-top:15px;margin-left:10px;}
+#wrapper #header .wrap .content .right-box {float:left;width:1000px;height:100%;background:#000;text-align:right;}
+
+/* 네비게이션 */
+/* #wrapper #header .wrap .content .right-box #nav > ul > li > .sub {text-align:right;background:#00f;padding:25px 25px 25px 0;} */
+/* #wrapper #header .wrap .content .right-box #nav > ul > li > .sub {width:720px;text-align:right;background:#00f;margin:25px auto 25px auto;} 가운데 정렬 */
+/* #wrapper #header .wrap .content .right-box #nav > ul > li > .sub {width:720px;text-align:right;background:#00f;margin:25px auto 25px 0;} 왼쪽 정렬 */
+/* #wrapper #header .wrap .content .right-box #nav > ul > li > .sub {width:720px;text-align:right;background:#00f;margin:25px 0 25px auto;} 오른쪽 정렬 */
+#wrapper #header .wrap .content .right-box #nav {width:auto;text-align:right;margin:25px 25px 25px 0;}
+#wrapper #header .wrap .content .right-box #nav > ul {display:inline-block;}
+#wrapper #header .wrap .content .right-box #nav > ul > li {float:left;width:180px;text-align:center;}
+#wrapper #header .wrap .content .right-box #nav > ul > li > a {display:block;background:#000;color:#fff;font-size:15px;font-weight:600;weight:600;text-align:center;line-height:50px;transition:all .3s;}
+#wrapper #header .wrap .content .right-box #nav > ul > li > a:hover {background:#000;color:#fff;}
+
+/* 서브메뉴 */
+#wrapper #header .wrap .content .right-box #nav > ul > li > .sub {text-align:center;width:100%;display:none;}
+#wrapper #header .wrap .content .right-box #nav:hover > ul > li > .sub {display:block;}
+#wrapper #header .wrap .content .right-box #nav > ul > li > .sub > ul {width:100%;}
+#wrapper #header .wrap .content .right-box #nav > ul > li > .sub > ul > li {width:100%;}
+#wrapper #header .wrap .content .right-box #nav > ul > li > .sub > ul > li > a {display:block;background:#f9f9f9;line-height:45px;transition:all .3s;}
+#wrapper #header .wrap .content .right-box #nav > ul > li > .sub > ul > li > a:hover {background:#777;color:#fff;}
+
+/* 메인 슬라이드 */
+#wrapper #main .section1 .slide-container {position:left;width:100%;height:300px;}
+#wrapper #main .section1 .slide-container .slide-view {z-index:1;position:relative;width:100%;height:300px;overflow:hidden;}
+#wrapper #main .section1 .slide-container .slide-view .slide-wrap {position:relative;left:0;width:4800px;height:300px;transition:all .4s ease-in-out;}
+#wrapper #main .section1 .slide-container .slide-view .slide-wrap .slide {float:left;width:1200px;height:300px;}
+#wrapper #main .section1 .slide-container .slide-view .slide-wrap .slide0 {background:url(../img/pasta-1181189_1920.jpg) no-repeat 50% 50%;background-size:cover;}
+#wrapper #main .section1 .slide-container .slide-view .slide-wrap .slide1 {background:url(../img/raspberries-5576401_1920.jpg) no-repeat 50% 50%;background-size:cover;}
+#wrapper #main .section1 .slide-container .slide-view .slide-wrap .slide2 {background:url(../img/raspberry-2023404_1920.jpg) no-repeat 50% 50%;background-size:cover;}
+#wrapper #main .section1 .slide-container .slide-view .slide-wrap .slide3 {background:url(../img/waffles-5192625_1920.jpg) no-repeat 50% 50%;background-size:cover;}
+
+/* 다음 이전 화살표 버튼 */
+#wrapper #main .section1 .slide-container .next-btn-wrap {z-index:2;position:absolute;top:30%;margin-top:-50px;right:50px;width:60px;height:60px;transform:rotate(45deg);border-top:#fff 1px solid;border-right:#fff solid 1px;}
+#wrapper #main .section1 .slide-container .next-btn-wrap a {display:block;width:100%;height:100%;}
+#wrapper #main .section1 .slide-container .prev-btn-wrap {z-index:2;position:absolute;top:30%;margin-top:-50px;left:50px;width:60px;height:60px;transform:rotate(45deg);border-left:#fff 1px solid;border-bottom:#fff solid 1px;}
+#wrapper #main .section1 .slide-container .prev-btn-wrap a {display:block;width:100%;height:100%;}
+
+#wrapper #main {z-index:2;position:relative;width:1200px;height:600px;margin:0 auto;}
+#wrapper #main .section1 {width:1200px;height:300px;margin:0 auto;background:#eae;}
+#wrapper #main .section2 {width:1200px;height:300px;margin:0 auto;background:url(../img/restaurant-img7.jpg);}
+#wrapper #main .section2 .content {width:100%;content:100%;}
+#wrapper #main .section2 .content .left-box   {float:left;width:400px;height:300px;cursor:pointer;background:url(../img/restaurant-img33.png) no-repeat 50% 50%;background-size:250px 250px;transition:all .6s;}
+#wrapper #main .section2 .content .left-box:hover {transform:scale(1.2);}
+#wrapper #main .section2 .content .center-box {float:left;width:400px;height:300px;background:url(../img/restaurant-img34.png) no-repeat 50% 50%;background-size:250px 250px;transition:all .6s;}
+#wrapper #main .section2 .content .center-box:hover {transform:scale(1.2);}
+#wrapper #main .section2 .content .right-box  {float:left;width:400px;height:300px;cursor:pointer;background:url(../img/restaurant-img35.png) no-repeat 50% 50%;background-size:250px 250px;transition:all .6s;}
+#wrapper #main .section2 .content .right-box:hover {transform:scale(1.2);}
+
+#wrapper #footer {z-index:1;position:relative;width:100%;height:100px;background:#ddd;}
+#wrapper #footer #wrap {width:1200px;height:100px;margin:0 auto;background:#aff;}
+#wrapper #footer #wrap .content {width:100%;height:100%;}
+#wrapper #footer #wrap .content .left-box  {float:left;width:200px;height:100%;background:#000;}
+#wrapper #footer #wrap .content .right-box {float:left;width:1000px;height:100%;}
+#wrapper #footer #wrap .content .right-box .top-box    {width:100%;height:50px;background:#333;}
+#wrapper #footer #wrap .content .right-box .bottom-box {width:100%;height:50px;background:#444;}

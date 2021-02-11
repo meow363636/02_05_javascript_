@@ -1,0 +1,125 @@
+[와이어프레임 순서 정리]
+1. 폴더 만들기
+    폴더 안에 css폴더 (reset.css / style.css), icon폴더 (fontawesome 4버전 / fontawesome 5버전), img폴더, index.html
+    탐색기에 폴더 열기
+
+2. 파일 기본 설정하기
+    index.html 파일 -- !누르고 tab키 (html 5 DOC)
+    style.css 파일 -- @charset "UTF-8"; (띄어쓰기 주의)
+    index.html 파일 언어 en -> ko 로 변경
+    index.html 파일 타이틀 (창 제목) 변경
+    index.html 파일 head 안 (타이틀 밑) 에 링크 걸기    
+    css 폴더에서 reset.css 랑 style.css 불러오기 (link - ./css/reset(style).css)
+    icon 폴더에서 fontawesome 4버전 5버전 불러오기
+        4버전 - link (./icon/fontawesome.js)
+        5버전 - script (<script src="./icon/css/font-awesome.css></script>)
+    img 파일 부를 때는 body에서 작업할 때 url 로 붙여넣음
+
+3. index.html 파일 기본 (제일 큰 틀) 간격 설정하기
+    index.html - body
+    div#wrapper 밑에 header#header - main#main - footer#footer 만들기
+
+4. index.html 파일 기본 (제일 큰 틀) 간격 style 설정
+    style.css
+    #wrapper {width:--;height:--;margin 0 auto;background:--;}
+    #wrapper #header {width:--;height:--;background:--;}
+    #wrapper #main {width:--;height:--;background:--;}
+    #wrapper #footer {width:--;height:--;background:--;}
+        * 넓이, 높이, 마진(정렬), 배경 등의 설정은 때에 따라 달라짐
+
+5. index.html 파일 세부 간격 설정하기
+    index.html
+    각 header, main, footer 안에 div 이나 section 으로 나누기 (div > section 순으로)
+        * 세부 간격의 설정은 때에 따라 달라짐
+        * #wrap - 전체 그룹, header - 행단위, .wrap - 웹 문서의 너비 영역을 구분, .content - 두 개의 박스 그룹
+        * 순서 : 칸 줄 칸 줄 (칸이 나눠지면 그 칸을 감싸는 박스를 만든다)
+                 #wrapper(전체감쌈) #header .wrap > .section > .content > .left-box
+                  
+                  [줄]
+                 #wrapper(전체감쌈)
+
+                 #wrapper(전체감쌈) #header 100%
+                 #wrapper(전체감쌈) #header .wrap 1200
+                      ** .wrap이 나온 이유 : 맨 위 #header 가 100%로 나와서 그 밑에 헤더 너비를 조정해줘야 되기 때문
+
+                 #wrapper(전체감쌈) #main 1200
+                 #wrapper(전체감쌈) #main
+	             #wrapper(전체감쌈) #main #section1
+	             #wrapper(전체감쌈) #main #section2
+                 
+                 #wrapper(전체감쌈) #footer 100%
+                 #wrapper(전체감쌈) #footer .wrap 1200
+
+                  [칸]
+                 #wrapper(전체감쌈) #header .wrap 1200
+                 #wrapper(전체감쌈) #header .wrap 1200 .content > .left-box 
+                 #wrapper(전체감쌈) #header .wrap 1200 .content > .right-box 
+
+
+6. index.html 파일 세부 간격 style 설정
+    style.css
+    #wrapper #(header/main/footer) {width:--;height:--;background:--;}
+    #wrapper #(header/main/footer) .(div에서 정한 wrap > content ..) {width:--;height:--;background:--;}
+    #wrapper #(header/main/footer) .(div에서 정한 wrap > content ..) .section$ {width:--;height:--;background:--;}
+        * 넓이, 높이, 마진(정렬), 배경 등의 설정은 때에 따라 달라짐 
+
+6-1. float 쓰기
+    div.left-box + div.center-box +div.right-box 부분이 block 이므로 왼쪽 정렬 (float) 써준다
+    그 부분 앞에 써줌
+        #wrapper #header .wrap .content .left-box {float:left;width:--;height:--;background:--;}
+        #wrapper #header .wrap .content .right-box {float:left;width:--;height:--;background:--;}  
+
+6-2. 클리어픽스 핵 쓰기
+    div#wrap > (header, main, footer) > div.wrap > div.content > div.left-box + div.center-box +div.right-box
+    div.(right center right)-box에 클리어픽스 핵이 적용되어야 하므로 
+    엄마 부분인 div.content 부분에 클리어픽스 핵 써준다
+        <div class="content clearfix">
+
+6-3. 배경색깔 설정하기
+    끝에 배경색 설정해서 내가 어느 부분을 변경했는지 알 수 있음
+
+7. 네비게이션 (.nav) 설정하기 - (index.html) 메뉴 만들기
+    (nav 안) ul > li > a(링크태그:버튼) > {버튼이름}
+    --> ul>li*4>a.main-btn>{MENU-$} **메인메뉴는 클래스 이름 설정
+            <ul class="main-btn-wrap">
+                <li><a href="#" class="main-btn">MENU-1</a></li>
+                <li><a href="#" class="main-btn">MENU-2</a></li>
+                <li><a href="#" class="main-btn">MENU-3</a></li>
+                <li><a href="#" class="main-btn">MENU-4</a></li>
+            </ul>
+            ** href= # 써주기
+            ** ul 클래스 이름 지정
+
+7-1. 네비게이션 (.nav) 설정하기 - (style.css) 메뉴 만들기
+    style.css 에서 메뉴 (ul,li) 전체 묶어주는 박스 (<nav id="nav">) 의 목록 만들기
+        #wrapper #header .wrap .content .right-box #nav {}
+        #wrapper #header .wrap .content .right-box #nav > ul {}
+        #wrapper #header .wrap .content .right-box #nav > ul > li {}
+        #wrapper #header .wrap .content .right-box #nav > ul > li > a {}
+            ** ul li a 와 같이 이름 없는 애들은 > 를  써서 자손처리 해야함
+
+7-2. 네비게이션 (.nav) 설정하기 - (첫번째) #wrapper #header .wrap .content .right-box #nav {}
+    1. display:inline-block 지정 (마우스 올렸을 때 반응할 수 있는 부분을 자를 경우)
+    2. margin 으로 정렬 지정하기
+        ex) margin:25px 25px 25px 0;
+
+7-3. (세번째) #wrapper #header .wrap .content .right-box #nav > ul > li {}
+    플로팅(html에 바로 윗 요소에 클래스 이름 clearfix 추가), 칸 크기 지정하기
+        ex) float:left;width:180px;height:50px;
+
+7-4. (네번째) #wrapper #header .wrap .content .right-box #nav > ul > li > a {}
+    칸 안의 글씨 블록 지정(block), 넓이 지정(width), 높이 지정(height), 배경색 지정(background), 
+    글씨 색깔 지정(color), 폰트 크기 지정(font-size), 폰트 두께 조정(font-weight), 글씨 정렬(text-align),
+    칸 안의 글씨 정렬(line-height)
+        ex) display:block;width:100%;height:100%;background:#fff;
+        color:#000;font-size:15px;weight:600;text-align:center;line-height:50px;
+
+7-5. (두번째) #wrapper #header .wrap .content .right-box #nav > ul {}
+    ul 크기 조정
+        ex) width:100%;height:100%;
+
+7-6. 네비게이션 (.nav) 설정하기 - hover (애니메이션) 설정하기
+    1. #wrapper #header .wrap .content .right-box #nav > ul > li > a:hover 추가
+    2. {}에 마우스 올렸을 때 바뀔 배경색, 글자색 지정
+    3. 바로 윗 요소에 transition:-- --s 지정
+
